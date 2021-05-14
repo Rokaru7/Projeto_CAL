@@ -6,7 +6,7 @@
 #include <list>
 #include <limits>
 #include <cmath>
-#include "MutablePriorityQueue.h"
+//#include "MutablePriorityQueue.h"
 
 
 template <class T> class Edge;
@@ -19,12 +19,12 @@ template <class T> class Vertex;
 
 template <class T>
 class Vertex {
-    T info;						// content of the vertex
+    T info;     // content of the vertex
     std::vector<Edge<T> > adj;		// outgoing edges
 
     double dist = 0;
     Vertex<T> *path = NULL;
-    int queueIndex = 0; 		// required by MutablePriorityQueue
+    //int queueIndex = 0; 		// required by MutablePriorityQueue
 
     bool visited = false;		// auxiliary field
     bool processing = false;	// auxiliary field
@@ -37,9 +37,9 @@ public:
     double getDist() const;
     Vertex *getPath() const;
 
-    bool operator<(Vertex<T> & vertex) const; // // required by MutablePriorityQueue
+    //bool operator<(Vertex<T> & vertex) const; // // required by MutablePriorityQueue
     friend class Graph<T>;
-    friend class MutablePriorityQueue<Vertex<T>>;
+    //friend class MutablePriorityQueue<Vertex<T>>;
 };
 
 
@@ -55,10 +55,12 @@ void Vertex<T>::addEdge(Vertex<T> *d, double w) {
     adj.push_back(Edge<T>(d, w));
 }
 
+/*
 template <class T>
 bool Vertex<T>::operator<(Vertex<T> & vertex) const {
     return this->dist < vertex.dist;
 }
+*/
 
 template <class T>
 T Vertex<T>::getInfo() const {
@@ -104,13 +106,11 @@ public:
     int getNumVertex() const;
     std::vector<Vertex<T> *> getVertexSet() const;
 
-    // Fp06 - single source
-    void unweightedShortestPath(const T &s);    //TODO...
+    // single source
     void dijkstraShortestPath(const T &s);      //TODO...
-    void bellmanFordShortestPath(const T &s);   //TODO...
-    std::vector<T> getPath(const T &origin, const T &dest) const;   //TODO...
+    //std::vector<T> getPath(const T &origin, const T &dest) const;   //TODO...
 
-    // Fp06 - all pairs
+    // all pairs
     void floydWarshallShortestPath();   //TODO...
     std::vector<T> getfloydWarshallPath(const T &origin, const T &dest) const;   //TODO...
 
@@ -165,36 +165,18 @@ bool Graph<T>::addEdge(const T &sourc, const T &dest, double w) {
 }
 
 
-/**************** Single Source Shortest Path algorithms ************/
-
-template<class T>
-void Graph<T>::unweightedShortestPath(const T &orig) {
-    // TODO implement this
-}
-
-
 template<class T>
 void Graph<T>::dijkstraShortestPath(const T &origin) {
     // TODO implement this
 }
 
-
-template<class T>
-void Graph<T>::bellmanFordShortestPath(const T &orig) {
-    // TODO implement this
-}
-
-
+/*
 template<class T>
 std::vector<T> Graph<T>::getPath(const T &origin, const T &dest) const{
     std::vector<T> res;
-    // TODO implement this
     return res;
 }
-
-
-
-/**************** All Pairs Shortest Path  ***************/
+*/
 
 template<class T>
 void Graph<T>::floydWarshallShortestPath() {

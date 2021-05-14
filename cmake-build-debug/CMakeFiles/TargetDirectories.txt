@@ -1,0 +1,3 @@
+C:/Users/pedro/Desktop/CAL/Projeto_CAL/cmake-build-debug/CMakeFiles/Projeto_CAL.dir
+C:/Users/pedro/Desktop/CAL/Projeto_CAL/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/pedro/Desktop/CAL/Projeto_CAL/cmake-build-debug/CMakeFiles/rebuild_cache.dir
